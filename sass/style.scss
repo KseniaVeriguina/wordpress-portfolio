@@ -12,6 +12,7 @@
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
+@import 'portfolio';
 @import 'footer';
 /*
 ====================================
@@ -25,6 +26,7 @@ img {
 
 body {
 	color: #333;
+	font-family: 'Roboto';
 }
 
 .container {
@@ -40,6 +42,21 @@ body {
 
 .full {
 	width: 100%;
+}
+
+// header
+
+header {
+	height: 100vh;
+	background-color: red;
+}
+
+.menu-menu-1-container {
+	z-index: 10;
+}
+.blue{
+	background-color: blue;
+	position: fixed;
 }
 
 
