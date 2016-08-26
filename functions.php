@@ -53,8 +53,6 @@ function hackeryou_styles(){
 	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
 
 	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Montserrat|Roboto');
-	// Y U NO WORK
-	wp_enqueue_style('animate', 'http://s.mlcdn.co/animate.css');
 
 	wp_enqueue_style('style', get_stylesheet_uri() );
 }

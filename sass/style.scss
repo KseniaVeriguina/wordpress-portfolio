@@ -7,9 +7,13 @@
 * Author URI: http://hackeryou.com
 */
 
+@import 'variables';
 @import 'normalize';
 @import 'typography';
+@import 'header';
 @import 'navigation';
+@import 'about';
+@import 'skills';
 @import 'sidebar';
 @import 'comments';
 @import 'portfolio';
@@ -29,34 +33,19 @@ body {
 	font-family: 'Roboto';
 }
 
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
+h2 {
+	margin-top: 0;
 }
 
 .full {
 	width: 100%;
 }
 
-// header
-
-header {
-	height: 100vh;
-	background-color: red;
-}
-
-.menu-menu-1-container {
-	z-index: 10;
-}
-.blue{
-	background-color: blue;
-	position: fixed;
+// General styling
+.wrapper {
+	max-width: 1080px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 

@@ -17,10 +17,14 @@ get_header();  ?>
       <?php the_field('short_desc'); ?>
       <!-- grabs image -->
       <?php while(have_rows('images')): the_row();  ?>
-        <?php $image = get_sub_field('image') ?>
-        <img src="<?php echo $image['sizes']['medium'] ?>">
-        <?php $caption = get_sub_field('caption') ?>
-        <p> <?php echo $caption ?> </p>
+        <!-- This was initially used t grab image from custom field, as the image return was set to Object and NOT url (changed in dashboard) -->
+        <!-- <?php // $image = get_sub_field('image') ?> -->
+        <!-- <img src="<?php // echo $image['sizes']['medium'] ?>"> -->
+        <img src="<?php the_sub_field('image'); ?>">
+      <?php endwhile ?>
+
+      <?php while(have_rows('skills_used')): the_row(); ?>
+        <span><?php the_sub_field('tech_name'); ?></span>
       <?php endwhile ?>
 
     <?php endwhile; // end the loop?>

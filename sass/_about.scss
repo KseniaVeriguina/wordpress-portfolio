@@ -1,0 +1,34 @@
+// About section styles go here
+
+.about {
+	display: flex;
+	flex-direction: row;
+	.about-image {
+		background-color: white;
+	}
+	.about-text {
+		background-color: red;
+		padding: 150px 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+// split sections styles
+.half {
+	width: 50%;
+}
+// wrapper for half sections
+.split-wrapper {
+	max-width: 540px;
+	width: 80%;
+}
+.split-right {
+	margin-right: 20%;
+	padding-left: 100px;
+}
+.split-left {
+	margin-left: 20%;
+	padding-right: 100px;
+}

@@ -1,9 +1,41 @@
-// portfolio styles
+// portfolio section styles go here
+.portfolio {
+	background-color: $sectionGrey;
+}
 
-.portfolio-image {
-	width: 50%;
-	border: 2px solid blue;
-	img {
-		width: 100%;
+// individual portfolio items styles
+.portfolio-item {
+	width: 100%;
+	// height: 500px;
+	margin-bottom: 75px;
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
 	}
+	.portfolio-image {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.portfolio-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-right: 45px;
+	}
+}
+.smaller {
+	width: calc(100% - 550px);
+}
+.larger {
+	width: 550px;
+}
+.portfolio-item:nth-of-type(odd) .portfolio-text {
+	order: 2;
+	padding-right: 0;
+	padding-left: 45px;
 }
