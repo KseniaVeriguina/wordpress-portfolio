@@ -15,24 +15,31 @@
 
 
 <body <?php body_class(); ?>>
-<header id="top" style="background-image:url( <?php // the_field('hero_image'); ?> )">
+<!-- checkbox input (display:none) for slide-out nav -->
+<input type="checkbox" id="toggle" name="toggle" class="toggle-checkbox">
+
+<header id="top" style="background-image:url( <?php the_field('hero_image'); ?> )">
+  <label for="toggle" class="toggle-label"><i class="fa fa-bars" aria-hidden="true"></i></label>
   <div class="header_top">
-    <div class="header_top_container wrapper">
-      <!-- pulls in header_logo -->
-      <img src="<?php the_field('header_logo'); ?>" alt="">
-      <!-- pulls in main nav -->
-      <nav class="main-nav">
-        <?php wp_nav_menu( array(
-          'container' => false,
-          'theme_location' => 'primary'
-        )); ?>
-      </nav>
-    </div> <!-- ./header_top_container wrapper -->
+    <img src="<?php the_field('header_logo'); ?>" alt="" class="header-logo">
+    <nav class="main-nav">
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'primary'
+      )); ?>
+    </nav>
   </div> <!-- ./header_top -->
-  <div class="wrapper">
-    <h1> <?php the_field('header_title') ?> </h1>
-    <p> <?php the_field('header_tagline') ?> </p>
-    <a href="#contact">work with me</a>
-  </div> <!-- ./wrapper -->
+
+
+  <div class="header-bottom">
+    <div class="half"></div>
+    <div class="half">
+      <div class="split-wrapper split-right">
+        <h1> <?php the_field('header_title') ?> </h1>
+        <p> <?php the_field('header_tagline') ?> </p>
+        <a href="#contact" class="accent-button">contact</a>
+      </div> <!-- ./split-wrapper split-right -->
+    </div> <!-- ./half -->
+  </div> <!-- ./header-bottom -->
 </header><!-- ./header-->
 

@@ -1,0 +1,72 @@
+// contact section styles go here
+
+.contact {
+	background-color: $offWhite;
+	display: flex;
+	flex-direction: row;
+}
+
+// contact section left side (text)
+
+.contact-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: right;
+	.description {
+		padding-right: 35px;
+		padding-left: 0;
+	}
+	.description:before {
+		right: 0;
+		left: 100%;
+	}
+	.arrow-link {
+		padding-right: 0px;
+		padding-left: 10px;
+	}
+	.arrow-link:after {
+		left: -60px;
+		right: 100%;
+		top: 9px;
+	}
+}
+.social-nav {
+	li {
+		padding: 0;
+	}
+	a {
+		color: $mainGrey;
+		&:hover {
+			color: $accent;
+		}
+	}
+}
+
+// contact section right side (form)
+
+.contact-form-right {
+	padding-left: 0;
+}
+
+.wpcf7-form {
+	width: 100%;
+	input[type="text"], input[type="email"], textarea {
+		width: 100%;
+	}
+	input[type="submit"] {
+		background-color: $accent;
+		border: 2px solid $accent;
+		color: white;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		padding: 10px 25px;
+		letter-spacing: 0.1rem;
+		&:focus, &:hover {
+			background-color: transparent;
+			color: $accent;
+			outline: none;
+		}
+	}
+}
+

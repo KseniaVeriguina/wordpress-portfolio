@@ -17,6 +17,7 @@
 @import 'sidebar';
 @import 'comments';
 @import 'portfolio';
+@import 'contact';
 @import 'footer';
 /*
 ====================================
@@ -29,14 +30,24 @@ img {
 }
 
 body {
-	color: #333;
-	font-family: 'Roboto';
+	color: $mainGrey;
+	font-family: 'Roboto', sans-serif;
 }
-
-h2 {
-	margin-top: 0;
+p {
+	line-height: 1.6em;
 }
-
+a {
+	text-decoration: none;
+	transition: 0.3s all ease;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+	display: inline;
+}
 .full {
 	width: 100%;
 }
@@ -47,6 +58,70 @@ h2 {
 	width: 80%;
 	margin: 0 auto;
 }
+//section heading styling
+h2, .tagline {
+	margin: 0;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	line-height: 1.6em;
+}
+h2 {
+	font-size: 0.9rem;
+	letter-spacing: 0.1rem;
+	color: $accent;
+	padding-bottom: 10px;
+}
+.tagline {
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: $mainGrey;
+	padding-bottom: 30px;
+}
+.arrow-link {
+	position: relative;
+	padding-right: 10px;
+	color: $mainGrey;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	font-size: 0.9rem;
+	&:hover {
+		color: $accent;
+	}
+}
+.arrow-link:after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 1px;
+	background-color: #dddddd;
+	position: absolute;
+	right: -60px;
+	top: 9px;
+}
+.description {
+	position: relative;
+	padding-left: 35px;
+	margin-top: 0;
+}
+.description:before {
+	content: '';
+	display: block;
+	height: 60px;
+	width: 2px;
+	background-color: $accent;
+	position: absolute;
+	left: 0px;
+}
+
+.main-padding {
+	padding: 100px 0;
+}
+
+.center-heading {
+	text-align: center;
+}
+
+
 
 
 

@@ -26,7 +26,8 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'secondary' => 'Secondary Navigation'
 	) );
 
 	/*
@@ -52,7 +53,7 @@ function hackeryou_styles(){
 
 	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
 
-	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto');
 
 	wp_enqueue_style('style', get_stylesheet_uri() );
 }

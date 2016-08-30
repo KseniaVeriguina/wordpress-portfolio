@@ -3,12 +3,12 @@
 .about {
 	display: flex;
 	flex-direction: row;
+	min-height: 100vh;
 	.about-image {
 		background-color: white;
 	}
 	.about-text {
-		background-color: red;
-		padding: 150px 0;
+		background-color: $offWhite;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -26,9 +26,9 @@
 }
 .split-right {
 	margin-right: 20%;
-	padding-left: 100px;
+	padding-left: 75px;
 }
 .split-left {
 	margin-left: 20%;
-	padding-right: 100px;
+	padding-right: 75px;
 }

@@ -1,6 +1,7 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p><?php echo bloginfo( 'name'); ?> is built by Ksenia Veriguina &copy;<?php echo date('Y'); ?></p>
+    <p>Design based on <a href="https://themeforest.net/item/volter-creative-psd-template/14954425" target="_blank">Volter</a> Creative Theme</p>
   </div>
 </footer>
 

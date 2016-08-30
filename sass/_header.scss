@@ -1,19 +1,106 @@
 // header styles
 header {
-	height: 100vh;
+	height: 90vh;
 	background-size: cover;
 	background-position: 50%;
 	background-color: $lightGrey;
-	.header_top {
-		padding: 45px 0;
-		width: 100%;
-		border-bottom: 1px solid $navLine;
-		z-index: 10;
+}
+.header_top {
+	padding: 10px 10%;
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	transition: 1s all ease;
+	@media(max-width: 940px) {
+		flex-direction: column;
+		padding: 0;
+		background-color: white;
+		top: -100%;
+		justify-content: center;
+		// originally transition was here, before media query it produces fade-out effect
+		position: fixed;
 	}
-	.header_top_container {
+}
+.header-logo {
+	max-width: 60px;
+	@media(max-width: 940px) {
+		display: none;
+	}
+}
+.main-nav {
+	max-width: 600px;
+	width: 100%;
+	ul {
+		justify-content: space-between;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
+		@media(max-width: 940px) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	a {
+		color: $mainGrey;
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+	}
+}
+
+// sticky nav style
+.fixed {
+	background-color: $white;
+	position: fixed;
+	top: 0;
+}
+
+// Toggle menu for smaller screen 
+input.toggle-checkbox {
+	display: none;
+}
+
+// Nav slides out from the top
+.show {
+	top: 0;
+	height: 50%;
+}
+
+// styles for hamburger menu
+.toggle-label {
+	color: $accent;
+	position: fixed;
+	z-index: 100;
+	top: 40px;
+	right: 40px;
+	font-size: 30px;
+	display: none;
+	@media(max-width: 940px) {
+		display: block;
+	}
+}
+
+.header-bottom {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 81px);
+}
+
+.accent-button {
+	background-color: $accent;
+	border: 2px solid $accent;
+	color: white;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	letter-spacing: 0.1rem;
+	&:focus, &:hover {
+		background-color: transparent;
+		color: $accent;
+		outline: none;
 	}
 }

@@ -1,41 +1,148 @@
-// portfolio section styles go here
+// Portfolio section styles go here
+
 .portfolio {
-	background-color: $sectionGrey;
+	background-color: #e3e3e2;
 }
 
-// individual portfolio items styles
-.portfolio-item {
+// Blog section styles go here
+
+.blog {
+	background-color: #f0f0f0;
+}
+
+// Horizontal item styles-these styles are used by both Portfolio and Blog sections
+
+.horizontal-item {
 	width: 100%;
-	// height: 500px;
 	margin-bottom: 75px;
 	.wrapper {
 		display: flex;
 		flex-direction: row;
 		height: 100%;
 	}
-	.portfolio-image {
-		height: 100%;
+	.horizontal-image {
+		background-size: cover;
+		background-position: 50%;
+		background-blend-mode: darken;
+		background-color: rgba(0,0,0,0.1);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
-	.portfolio-text {
+	.lighten {
+		position: relative;
+		padding: 40px;
+		background-color: rgba(255,255,255,.8);
+		text-align: center;
+		max-width: 80%;
+	}
+	.angle {
+		position: absolute;
+		height: 20px;
+		width: 20px;
+	}
+	.topRight, .topLeft {
+		border-top: 2px solid $accent;
+		top: 20px;
+	}
+	.bottomRight, .bottomLeft {
+		border-bottom: 2px solid $accent;
+		bottom: 20px;
+	}
+	.topRight, .bottomRight {
+		border-right: 2px solid $accent;
+		right: 20px;
+	}
+	.topLeft, .bottomLeft {
+		border-left: 2px solid $accent;
+		left: 20px;
+	}
+	.horizontal-text {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
 		padding-right: 45px;
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
+	h3 {
+		font-size: 1.2rem;
+		font-family: 'Montserrat', sans-serif;
+		color: $mainGrey;
+		margin: 0;
+		text-transform: uppercase;
+		line-height: 1.6em;
+		padding-bottom: 30px;
+	}
+	ul {
+		margin-bottom: 30px;
+		li {
+			display: inline-block;
+			border-right: 1px solid $mainGrey;
+			padding: 0px 10px;
+			margin-bottom: 5px;
+		}
+		li:last-of-type {
+			border-right: none;
+			padding-right: 0;
+		}
+	}
+	.tech-used {
+		color: $accent;
+	}
+	.live-name {
+		text-transform: uppercase;
+		color: $accent;
+		margin: 0;
+		font-size: 1.5rem;
+		letter-spacing: 0.1rem;
+	}
+	.live-desc {
+		color: #787878;
+		text-transform: uppercase;
+		font-size: 0.7rem;
+		letter-spacing: 0.1rem;
+		margin-bottom: 0;
 	}
 }
 .smaller {
-	width: calc(100% - 550px);
+	width: 45%;
 }
 .larger {
-	width: 550px;
+	width: 55%;
 }
-.portfolio-item:nth-of-type(odd) .portfolio-text {
+.horizontal-item:nth-of-type(odd) .horizontal-text {
 	order: 2;
 	padding-right: 0;
 	padding-left: 45px;
+}
+.horizontal-item:nth-of-type(even) .horizontal-text {
+	text-align: right;
+	.description {
+		padding-right: 35px;
+		padding-left: 0;
+	}
+	.description:before {
+		right: 0;
+		left: 100%;
+	}
+	.arrow-link {
+		padding-right: 0px;
+		padding-left: 10px;
+	}
+	.arrow-link:after {
+		left: -60px;
+		right: 100%;
+		top: 9px;
+	}
+	ul {
+		li:last-of-type {
+			padding-right: 0;
+			padding-left: 10px;
+		}
+	}
+}
+.horizontal-item:last-of-type {
+	margin-bottom: 0;
 }
