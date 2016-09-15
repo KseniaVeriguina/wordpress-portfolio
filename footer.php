@@ -1,4 +1,4 @@
-<footer>
+<footer style="background-image:url( <?php the_field('hero_image'); ?> )">
   <div class="container">
     <p><?php echo bloginfo( 'name'); ?> is built by Ksenia Veriguina &copy;<?php echo date('Y'); ?></p>
     <p>Design based on <a href="https://themeforest.net/item/volter-creative-psd-template/14954425" target="_blank">Volter</a> Creative Theme</p>

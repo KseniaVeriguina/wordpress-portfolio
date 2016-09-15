@@ -30,16 +30,13 @@
     </nav>
   </div> <!-- ./header_top -->
 
-
   <div class="header-bottom">
-    <div class="half"></div>
-    <div class="half">
-      <div class="split-wrapper split-right">
-        <h1> <?php the_field('header_title') ?> </h1>
-        <p> <?php the_field('header_tagline') ?> </p>
-        <a href="#contact" class="accent-button">contact</a>
-      </div> <!-- ./split-wrapper split-right -->
-    </div> <!-- ./half -->
+    <div class="header-text">
+      <h1> <?php the_field('header_title') ?> </h1>
+      <p> <?php the_field('header_tagline') ?> </p>
+      <a href="#contact" class="accent-button">contact</a>
+    </div> <!-- ./header-text -->
+
   </div> <!-- ./header-bottom -->
 </header><!-- ./header-->
 

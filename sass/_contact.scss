@@ -4,22 +4,55 @@
 	background-color: $offWhite;
 	display: flex;
 	flex-direction: row;
+	@media(max-width: 860px) {
+		flex-direction: column;
+	}
+}
+.contact-form-container {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	@media(max-width: 860px) {
+		padding-top: 0;
+	}
+	@media(max-width: 500px) {
+		padding-bottom: 75px;
+	}
+}
+.contact-text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@media(max-width: 860px) {
+		padding-top: 100px;
+		padding-bottom: 20px;
+	}
+	@media(max-width: 500px) {
+		padding-top: 75px;
+	}
 }
 
 // contact section left side (text)
-
 .contact-text {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: right;
+	@media(max-width: 500px) {
+		text-align: center;
+	}
 	.description {
 		padding-right: 35px;
 		padding-left: 0;
+		@media(max-width: 500px) {
+			padding: 0;
+		}
 	}
 	.description:before {
 		right: 0;
 		left: 100%;
+		@media(max-width: 500px) {
+			display: none;
+		}
 	}
 	.arrow-link {
 		padding-right: 0px;
@@ -34,6 +67,13 @@
 .social-nav {
 	li {
 		padding: 0;
+	}
+	i {
+		font-size: 1.3rem;
+		padding: 10px;
+	}
+	i:last-of-type {
+		padding-right: 0;
 	}
 	a {
 		color: $mainGrey;
@@ -53,6 +93,13 @@
 	width: 100%;
 	input[type="text"], input[type="email"], textarea {
 		width: 100%;
+		padding: 5px;
+		border: 1px solid #d2d1d1;
+		transition: 0.3s border ease;
+		&:focus {
+			outline: none;
+			border: 1px solid $mainGrey;
+		}
 	}
 	input[type="submit"] {
 		background-color: $accent;

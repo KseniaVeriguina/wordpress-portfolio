@@ -3,32 +3,86 @@
 .about {
 	display: flex;
 	flex-direction: row;
-	min-height: 100vh;
+	background-color: $offWhite;
+	@media(max-width: 860px) {
+		flex-direction: column;
+	}
 	.about-image {
-		background-color: white;
+		background-size: cover;
+		background-position: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@media(max-width: 860px) {
+			display: none;
+		}
 	}
 	.about-text {
-		background-color: $offWhite;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		@media(max-width: 500px) {
+			h2, .tagline {
+				text-align: center;
+			}
+			.description:before {
+				display: none;
+			}
+			.description {
+				padding: 0;
+			}
+		}
+	}
+	.about-photo-container {
+		padding: 20px;
+		background-color: rgba(255,255,255,0.9);
+		max-width: 70%;
 	}
 }
 
 // split sections styles
 .half {
 	width: 50%;
+	@media(max-width: 860px) {
+		width: 60%;
+		padding: 0;
+		margin: 0 auto;
+	}
+	@media(max-width: 500px) {
+		width: calc(100% - 100px);
+		// padding-left: 40px;
+		// padding-right: 40px;
+	}
 }
 // wrapper for half sections
 .split-wrapper {
 	max-width: 540px;
 	width: 80%;
+	@media(max-width: 860px) {
+		max-width: 100%;
+		width: 100%;
+	}
 }
 .split-right {
 	margin-right: 20%;
 	padding-left: 75px;
+	@media(max-width: 1000px) {
+		padding-left: 45px;
+	}
+	@media(max-width: 860px) {
+		margin-right: 0;
+		padding-left: 0;
+	}
 }
 .split-left {
 	margin-left: 20%;
 	padding-right: 75px;
+	@media(max-width: 1000px) {
+		padding-right: 45px;
+	}
+	@media(max-width: 860px) {
+		margin-left: 0;
+		padding-right: 0;
+	}
 }

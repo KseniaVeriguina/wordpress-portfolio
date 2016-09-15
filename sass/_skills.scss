@@ -2,8 +2,13 @@
 
 .skills {
 	background-color: $lightGrey;
+	// padding is same as main-padding but compensates by 20px on the bottom for last row of skill-item margin
 	padding-bottom: 80px;
 	padding-top: 100px;
+	@media(max-width: 500px) {
+		padding-bottom: 55px;
+		padding-top: 75px;
+	}
 }
 .skills-container {
 	display: flex;
@@ -11,6 +16,9 @@
 	flex-wrap: wrap;
 	width: 80%;
 	margin: 0 auto;
+	@media(max-width: 650px) {
+		width: 100%;
+	}
 }
 .skills-item {
 	width: 25%;
@@ -19,8 +27,14 @@
 	justify-content: center;
 	text-align: center;
 	margin-bottom: 20px;
+	@media(max-width: 500px) {
+		width: 33.33%;
+	}
 	i {
 		font-size: 3rem;
+		@media(max-width: 500px) {
+			font-size: 2rem;
+		}
 	}
 	p {
 		margin-top: 5px;

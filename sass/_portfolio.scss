@@ -15,6 +15,9 @@
 .horizontal-item {
 	width: 100%;
 	margin-bottom: 75px;
+	@media(max-width: 500px) {
+		margin-bottom: 20px;
+	}
 	.wrapper {
 		display: flex;
 		flex-direction: row;
@@ -29,13 +32,38 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		@media(max-width: 860px) {
+			width: 100%;
+			padding: 10% 5%;
+		}
+		@media(max-width: 500px) {
+			padding: 15px;
+		}
+	}
+	// tweak the size of lighten field later
+	.lighten-visible {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.blog-lighten {
+		display: none;
+		@media(max-width: 860px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	.lighten {
 		position: relative;
 		padding: 40px;
-		background-color: rgba(255,255,255,.8);
+		background-color: rgba(255,255,255,.9);
 		text-align: center;
 		max-width: 80%;
+		@media(max-width: 500px) {
+			width: 100%;
+			max-width: 100%;
+		}
 	}
 	.angle {
 		position: absolute;
@@ -65,6 +93,13 @@
 		padding-right: 45px;
 		padding-top: 75px;
 		padding-bottom: 75px;
+		@media(max-width: 1040px) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		@media(max-width: 860px) {
+			display: none;
+		}
 	}
 	h3 {
 		font-size: 1.2rem;
@@ -82,6 +117,10 @@
 			border-right: 1px solid $mainGrey;
 			padding: 0px 10px;
 			margin-bottom: 5px;
+			@media(max-width: 600px) {
+				border-right: none;
+				padding: 0px 5px;
+			}
 		}
 		li:last-of-type {
 			border-right: none;
@@ -97,6 +136,10 @@
 		margin: 0;
 		font-size: 1.5rem;
 		letter-spacing: 0.1rem;
+		@media(max-width: 500px) {
+			font-size: 1.1rem;
+			line-height: 1.7rem;
+		}
 	}
 	.live-desc {
 		color: #787878;
@@ -122,6 +165,9 @@
 	.description {
 		padding-right: 35px;
 		padding-left: 0;
+		@media(max-width: 500px) {
+			padding-right: 0;
+		}
 	}
 	.description:before {
 		right: 0;
@@ -145,4 +191,30 @@
 }
 .horizontal-item:last-of-type {
 	margin-bottom: 0;
+}
+.showlater {
+	display: none;
+	color: #787878;
+	color: $mainGrey;
+	@media(max-width: 860px) {
+		display: block;
+	}
+}
+h3.showlater {
+	color: $mainGrey;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	padding-bottom: 10px;
+}
+ul.showlater {
+	margin-bottom: 10px;
+}
+a.showlater {
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	color: $mainGrey;
+	font-size: .9rem;
+	&:hover {
+		color: $accent;
+	}
 }

@@ -4,8 +4,10 @@
 <main>
   <!-- ABOUT SECTION STARTS HERE -->
   <section id="about" class="about">
-    <div class="about-image half">
-        <img src="<?php the_field('about_image') ?>">
+    <div class="about-image half" style="background-image:url(<?php the_field('about_image') ?>)">
+      <div class="about-photo-container">
+        <img src="<?php the_field('about_photo') ?>">
+      </div> <!-- .about-photo-container -->
     </div> <!-- ./about-image half-->
     <div class="about-text half main-padding">
       <div class="split-wrapper split-right">
@@ -78,16 +80,28 @@
             </div> <!-- ./horizontal-text -->
 
             <div class="horizontal-image larger" style="background-image:url( <?php the_field('portfolio_image'); ?> )">
-              <div class="lighten">
+              <div class="lighten lighten-visible">
                 <div class="topRight angle"></div>
                 <div class="topLeft angle"></div>
                 <div class="bottomRight angle"></div>
                 <div class="bottomLeft angle"></div>
+                <!-- shows up only on mobile starts here -->
+                <!-- <h3 class="showlater"><?php the_title(); ?></h3> -->
+                <!-- shows up only on mobile ends here -->
                 <p class="live-name"><?php the_field('live_name'); ?></p>
                 <p class="live-desc"><?php the_field('live_desc'); ?></p>
+                <!-- stuff that will only show up on mobile STARTS HERE-->
+                <p class="showlater">Technology used:</p>
+                <ul class="showlater">
+                <?php while(have_rows('skills_used')): the_row(); ?>
+                  <li><?php the_sub_field('tech_name'); ?></li>
+                <?php endwhile ?>
+                </ul>
+                <a href="<?php the_field('project_url'); ?>" target="_blank" class="showlater">view live</a>
+                <!-- stuff that will only show up on mobile ENDS HERE-->
+
               </div> <!-- ./lighten -->
             </div> <!-- ./horizontal-image -->
-
           </div> <!-- ./wrapper -->
   	    </div> <!-- ./horizontal-item -->
 
@@ -122,7 +136,7 @@
           <?php while ($posts->have_posts()) : $posts->the_post(); ?>
             <div class="horizontal-item">
               <div class="wrapper">
-                <div class="horizontal-text smaller main-padding">
+                <div class="horizontal-text smaller">
                   <div class="text-wrapper">
                     <h3><?php the_title(); ?></h3>
                     <p class="description"><?php the_field('blog_desc'); ?></p>
@@ -130,10 +144,19 @@
                   </div> <!-- ./text-wrapper -->
                 </div> <!-- ./horizontal-text -->
 
-                <div class="horizontal-image larger">
-                  <img src="<?php the_field('blog_image'); ?>">
+                <div class="horizontal-image larger" style="background-image:url( <?php the_field('blog_image'); ?> )">
+                  <!-- shows up only on mobile starts here -->
+                  <div class="lighten blog-lighten">
+                    <div class="topRight angle"></div>
+                    <div class="topLeft angle"></div>
+                    <div class="bottomRight angle"></div>
+                    <div class="bottomLeft angle"></div>
+                    <h3 class="showlater"><?php the_title(); ?></h3>
+                    <p><?php the_field('blog_desc'); ?></p>
+                    <a href="<?php the_field('blog_url'); ?>" target="_blank" class="showlater">read more</a>
+                  </div> <!-- ./lighten -->
+                  <!-- stuff that will only show up on mobile ENDS HERE-->
                 </div> <!-- ./horizontal-image -->
-
               </div> <!-- ./wrapper -->
             </div> <!-- ./horizontal-item -->
           <?php endwhile; ?>
@@ -144,8 +167,8 @@
   <!-- BLOG SECTION ENDS -->
 
   <!-- CONTACT SECTION STARTS HERE -->
-  <section id="contact" class="contact main-padding">
-    <div class="half main-padding">
+  <section id="contact" class="contact">
+    <div class="half contact-text-container">
       <div class="split-wrapper split-left contact-text">
         <h2><?php the_field('contact_heading'); ?></h2>
         <p class="tagline"><?php the_field('contact_tagline'); ?></p>
@@ -158,13 +181,13 @@
           )); ?>
         </nav>
       </div> <!-- ./split-wrapper split-left-->
-    </div> <!-- ./half main-padding-->
+    </div> <!-- ./half main-padding contact-text-container-->
 
-    <div class="half">
+    <div class="half contact-form-container">
       <div class="split-wrapper split-right contact-form-right">
         <?php echo do_shortcode('[contact-form-7 id="46" title="Contact form 1"]'); ?>
       </div> <!-- ./split-wrapper .split-right -->
-    </div> <!-- ./half-->
+    </div> <!-- ./half contact-form-container-->
 
   </section>
   <!-- CONTACT SECTION ENDS HERE -->

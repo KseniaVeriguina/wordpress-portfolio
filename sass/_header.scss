@@ -1,34 +1,38 @@
 // header styles
 header {
-	height: 90vh;
+	min-height: 100vh;
 	background-size: cover;
 	background-position: 50%;
 	background-color: $lightGrey;
+	background-attachment: fixed;
+	@media(max-width: 600px) {
+		background-attachment: scroll;
+	}
 }
 .header_top {
-	padding: 10px 10%;
+	padding: 0px 10%;
 	width: 100%;
 	z-index: 10;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	transition: 1s all ease;
+	transition: 0.5s background-color;
+	height: 80px;
 	@media(max-width: 940px) {
 		flex-direction: column;
 		padding: 0;
 		background-color: white;
 		top: -100%;
+		height: 100%;
 		justify-content: center;
-		// originally transition was here, before media query it produces fade-out effect
+		transition: 1s all ease;
 		position: fixed;
 	}
 }
 .header-logo {
-	max-width: 60px;
-	@media(max-width: 940px) {
-		display: none;
-	}
+	width: 60px;
+	height: 60px;
 }
 .main-nav {
 	max-width: 600px;
@@ -42,11 +46,35 @@ header {
 			text-align: center;
 		}
 	}
+	li {
+		display: flex;
+		padding: 0;
+		height: 100%;
+		padding: 0 10px;
+		justify-content: center;
+		&:hover a:after {
+			width: 40px;
+		}
+	}
 	a {
 		color: $mainGrey;
 		text-transform: uppercase;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 400;
+		padding: 20px 0;
+		display: block;
+		&:hover, &:focus {
+			color: $accent;
+		}
+	}
+	a:after {
+		content: '';
+		width: 0px;
+		height: 2px;
+		margin-top: 5px;
+		background-color: $accent;
+		display: block;
+		transition: 0.3s all;
 	}
 }
 
@@ -65,7 +93,6 @@ input.toggle-checkbox {
 // Nav slides out from the top
 .show {
 	top: 0;
-	height: 50%;
 }
 
 // styles for hamburger menu
@@ -80,6 +107,10 @@ input.toggle-checkbox {
 	@media(max-width: 940px) {
 		display: block;
 	}
+	@media(max-width: 500px) {
+		top: 20px;
+		right: 26px;
+	}
 }
 
 .header-bottom {
@@ -88,7 +119,31 @@ input.toggle-checkbox {
 	align-items: center;
 	justify-content: center;
 	height: calc(100vh - 81px);
+	@media(max-width: 940px) {
+		height: 100vh;
+	}
+	h1 {
+		font-size: 2rem;
+	    text-transform: uppercase;
+	    letter-spacing: 1rem;
+	    line-height: 1.4em;
+	    margin: 0;
+	    @media(max-width: 500px) {
+	    	font-size: 1.6rem;
+	    }
+	}
+	p {
+		line-height: 1.6rem;
+		margin-top: 5px;
+		margin-bottom: 30px;
+		font-size: 1.1rem;
+		letter-spacing: 0.1rem;
+		@media(max-width: 500px) {
+			font-size: 1.4rem;
+		}
+	}
 }
+
 
 .accent-button {
 	background-color: $accent;
@@ -102,5 +157,16 @@ input.toggle-checkbox {
 		background-color: transparent;
 		color: $accent;
 		outline: none;
+	}
+}
+.header-text {
+	width: 50%;
+	margin-left: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	@media(max-width: 600px) {
+		width: 80%;
+		margin-left: 20%;
 	}
 }
