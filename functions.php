@@ -18,15 +18,15 @@ function theme_setup() {
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
-	// add option to upload logo in theme customizer
+	// Add option to upload logo in theme customizer
 	add_theme_support( 'custom-logo' );
 
 
 	/* This theme uses wp_nav_menu() in one location.
 	* You can allow clients to create multiple menus by
-  * adding additional menus to the array. */
+  	* adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation',
+		'primary'   => 'Primary Navigation',
 		'secondary' => 'Secondary Navigation'
 	) );
 
@@ -67,37 +67,37 @@ function hackeryou_scripts() {
 
 	//Don't use WordPress' local copy of jquery, load our own version from a CDN instead
 	wp_deregister_script('jquery');
-  wp_enqueue_script(
-  	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
-  	false, //dependencies
-  	null, //version number
-  	true //load in footer
-  );
+	wp_enqueue_script(
+  		'jquery',
+  		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  		false, //dependencies
+  		null, //version number
+  		true //load in footer
+	);
 
-  wp_enqueue_script(
-    'plugins', //handle
-    get_template_directory_uri() . '/js/plugins.js', //source
-    false, //dependencies
-    null, // version number
-    true //load in footer
-  );
+	wp_enqueue_script(
+    	'plugins', //handle
+    	get_template_directory_uri() . '/js/plugins.js', //source
+    	false, //dependencies
+    	null, // version number
+    	true //load in footer
+	);
 
-  wp_enqueue_script(
-    'scripts', //handle
-    get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
-    null, // version number
-    true //load in footer
-  );
+	wp_enqueue_script(
+		'scripts', //handle
+		get_template_directory_uri() . '/js/main.min.js', //source
+		array( 'jquery', 'plugins' ), //dependencies
+		null, // version number
+		true //load in footer
+	);
 
-  wp_enqueue_script(
-     'smoothscroll', //handle
-     'https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.0.0/jquery.smooth-scroll.min.js', //source
-     false, //dependencies
-     null, // version number
-     true //load in footer
-   );
+	wp_enqueue_script(
+		'smoothscroll', //handle
+		'https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.0.0/jquery.smooth-scroll.min.js', //source
+		false, //dependencies
+		null, // version number
+		true //load in footer
+	);
 
 }
 
@@ -185,13 +185,13 @@ add_filter( 'get_the_excerpt', 'hackeryou_custom_excerpt_more' );
 function hackeryou_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => 'Primary Widget Area',
-		'id' => 'primary-widget-area',
-		'description' => 'The primary widget area',
+		'name'          => 'Primary Widget Area',
+		'id'            => 'primary-widget-area',
+		'description'   => 'The primary widget area',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 }
