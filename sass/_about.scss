@@ -1,4 +1,4 @@
-// About section styles go here
+/*About section styles go here*/
 
 .about {
 	display: flex;
@@ -41,7 +41,7 @@
 	}
 }
 
-// split sections styles
+/*split sections styles*/
 .half {
 	width: 50%;
 	@media(max-width: 860px) {
@@ -55,7 +55,7 @@
 		// padding-right: 40px;
 	}
 }
-// wrapper for half sections
+/*wrapper for half sections*/
 .split-wrapper {
 	max-width: 540px;
 	width: 80%;

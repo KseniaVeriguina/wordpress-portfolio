@@ -1,16 +1,16 @@
-// Portfolio section styles go here
+/*Portfolio section styles go here*/
 
 .portfolio {
 	background-color: #e3e3e2;
 }
 
-// Blog section styles go here
+/*Blog section styles go here*/
 
 .blog {
 	background-color: #f0f0f0;
 }
 
-// Horizontal item styles-these styles are used by both Portfolio and Blog sections
+/*Horizontal item styles-these styles are used by both Portfolio and Blog sections*/
 
 .horizontal-item {
 	width: 100%;
@@ -40,7 +40,7 @@
 			padding: 15px;
 		}
 	}
-	// tweak the size of lighten field later
+	/*tweak the size of lighten field later*/
 	.lighten-visible {
 		display: flex;
 		flex-direction: column;

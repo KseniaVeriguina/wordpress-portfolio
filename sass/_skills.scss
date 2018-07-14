@@ -1,8 +1,8 @@
-// skills section styles go here
+/*skills section styles go here*/
 
 .skills {
 	background-color: $lightGrey;
-	// padding is same as main-padding but compensates by 20px on the bottom for last row of skill-item margin
+	/*padding is same as main-padding but compensates by 20px on the bottom for last row of skill-item margin*/
 	padding-bottom: 80px;
 	padding-top: 100px;
 	@media(max-width: 500px) {
