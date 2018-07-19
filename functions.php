@@ -173,7 +173,7 @@ function hackeryou_custom_excerpt_more( $output ) {
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'hackeryou_custom_excerpt_more' );
+// add_filter( 'get_the_excerpt', 'hackeryou_custom_excerpt_more' );
 
 
 /*

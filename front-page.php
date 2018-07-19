@@ -139,12 +139,12 @@
                 <div class="horizontal-text smaller">
                   <div class="text-wrapper">
                     <h3><?php the_title(); ?></h3>
-                    <p class="description"><?php the_field('blog_desc'); ?></p>
-                    <a href="<?php the_field('blog_url'); ?>" class="arrow-link" target="_blank">Read more</a>
+                    <p class="description"><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="arrow-link">Read more</a>
                   </div> <!-- ./text-wrapper -->
                 </div> <!-- ./horizontal-text -->
 
-                <div class="horizontal-image larger" style="background-image:url( <?php the_field('blog_image'); ?> )">
+                <div class="horizontal-image larger" style="background-image:url( <?php echo get_the_post_thumbnail_url(); ?> )">
                   <!-- shows up only on mobile starts here -->
                   <div class="lighten blog-lighten">
                     <div class="topRight angle"></div>
@@ -152,8 +152,8 @@
                     <div class="bottomRight angle"></div>
                     <div class="bottomLeft angle"></div>
                     <h3 class="showlater"><?php the_title(); ?></h3>
-                    <p><?php the_field('blog_desc'); ?></p>
-                    <a href="<?php the_field('blog_url'); ?>" target="_blank" class="showlater">read more</a>
+                    <p><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="showlater">read more</a>
                   </div> <!-- ./lighten -->
                   <!-- stuff that will only show up on mobile ENDS HERE-->
                 </div> <!-- ./horizontal-image -->
